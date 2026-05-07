@@ -1,0 +1,104 @@
+:root {
+  /* Primary — Deep Blue */
+  --primary:  #1A4FBF;
+  --primary2: #1340A0;
+  --primary3: #0D2E7A;
+  /* Accent — Vibrant Green */
+  --accent:   #17A876;
+  --accent2:  #0F8A60;
+  --accent-l: #D4F0E6;
+  --accent-pale: #EAF8F3;
+  /* Neutrals */
+  --sky:      #E8F0FE;
+  --white:    #FFFFFF;
+  --offwhite: #F4F7FF;
+  --card:     #FFFFFF;
+  --border:   rgba(26, 79, 191, 0.12);
+  --txt:      #0A1628;
+  --muted:    #5A6A85;
+  /* Danger */
+  --red:      #C0392B;
+  --red-l:    #FDECEA;
+  /* Shadows */
+  --sh:       0 4px 24px rgba(26, 79, 191, 0.10);
+  --sh-accent:0 4px 24px rgba(23, 168, 118, 0.22);
+  /* Legacy aliases so existing components don't break */
+  --gold:        #17A876;
+  --gold-l:      #7DDFB8;
+  --gold-pale:   #EAF8F3;
+  --gold-d:      #0F8A60;
+  --deep:        #0D2E7A;
+  --deep2:       #1A4FBF;
+  --deep3:       #1340A0;
+  --teal:        #17A876;
+  --teal-l:      #D4F0E6;
+  --bg:          #F4F7FF;
+  --r: 18px;
+  --r-sm: 12px;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overscroll-behavior: none;
+}
+
+#root {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  background: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input {
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+
+.fade-up  { animation: fadeUp  0.35s cubic-bezier(.16,1,.3,1); }
+.fade-in  { animation: fadeIn  0.25s ease; }
+.slide-up { animation: slideUp 0.38s cubic-bezier(.16,1,.3,1); }
